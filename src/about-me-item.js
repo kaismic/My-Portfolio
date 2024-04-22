@@ -5,7 +5,7 @@ customElements.define("about-me-item",
         }
 
         connectedCallback() {
-            this.className = 'w-full sm:w-1/2 lg:w-1/3 my-8'
+            this.className = 'w-full sm:w-1/2 lg:w-1/3'
 
             let container = document.createElement('div')
             container.className = 'flex max-w-64 w-full mx-auto items-center'
