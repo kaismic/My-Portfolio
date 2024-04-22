@@ -8,5 +8,10 @@
     "embla-carousel": "^8.0.2",
     "flowbite": "^2.3.0",
     "glob": "^10.3.12"
+  },
+  "scripts": {
+    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build:dev": "npx webpack --mode=development",
+    "build:prod": "npx webpack --mode=production"
   }
 }
