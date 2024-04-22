@@ -2,7 +2,6 @@
 module.exports = {
   content: [
     "./src/**/*.{html,js}",
-    "./node_modules/flowbite/**/*.js",
     "./index.html"
   ],
   theme: {
@@ -14,8 +13,5 @@ module.exports = {
         NotoSans: ['Noto Sans', 'sans-serif']
       }
     }
-  },
-  plugins: [
-    require('flowbite/plugin')
-  ]
+  }
 }
