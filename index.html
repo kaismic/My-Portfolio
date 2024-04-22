@@ -8,11 +8,11 @@
     </head>
     <body>
         <header></header>
-        <div class="text-center pt-32 pb-16 px-8 bg-no-repeat bg-center bg-cover"
+        <div class="text-center py-32 bg-no-repeat bg-center bg-cover"
         style="background-image: linear-gradient(rgba(112, 99, 80, 0.8),rgba(112, 99, 80, 0.8)), url(/images/background2.jpg)">
-            <h1 class="text-white font-Poppins text-5xl lg:text-6xl font-extrabold">- ISAC KIM -</h1>
+            <h1 class="text-white font-Poppins text-4xl md:text-5xl lg:text-6xl font-extrabold">- ISAC KIM -</h1>
             <hr class="w-16 h-1 mx-auto my-8 bg-orange-500 border-0">
-            <div class="font-NotoSans text-base lg:text-lg mb-8">
+            <div class="font-NotoSans text-base md:text-lg lg:text-xl">
                 <p class="leading-loose text-opacity-80 text-white">Hi.</p>
                 <p class="leading-loose text-opacity-80 text-white">I'm a fresh IT graduate software developer, keen to learn new technologies and knowledges.</p>
                 <p class="leading-loose text-opacity-80 text-white">Curiosity, perseverance and enjoying challenges are my best strengths.</p>
@@ -20,8 +20,8 @@
         </div>
         <article class="bg-white">
             <div class="text-center py-16 px-8 max-w-6xl mx-auto">
-                <h1 class="text-black font-BlackHanSans text-4xl lg:text-5xl font-medium border-b border-neutral-300 w-fit mx-auto pb-3 mb-12">ABOUT ME</h1>
-                <div class="flex flex-wrap flex-row justify-start">
+                <h1 class="text-black font-BlackHanSans text-4xl lg:text-5xl font-medium border-b border-neutral-300 w-fit mx-auto pb-3 mb-8 md:mb-16">ABOUT ME</h1>
+                <div class="flex flex-wrap flex-row justify-start gap-y-6 md:gap-y-12">
                     <div is="about-me-item" icon-src="/images/person-fill.svg" label="Name" value="Isac Kim"></div>
                     <div is="about-me-item" icon-src="/images/geo-alt-fill.svg" label="Location" value="Seven Hills, NSW"></div>
                     <div is="about-me-item" icon-src="/images/telephone-fill.svg" label="Telephone" value="+61 452 078 119"></div>
@@ -35,14 +35,14 @@
                 <h1 class="text-white font-BlackHanSans text-4xl lg:text-5xl font-medium border-b border-neutral-300 w-fit mx-auto pb-3">PROJECTS</h1>
 
 
-                <div class="flex flex-col md:gap-6 items-center p-12 bg-white rounded-3xl shadow-2xl">
+                <div class="flex flex-col gap-3 md:gap-6 items-center p-8 md:p-12 bg-white rounded-3xl shadow-2xl">
                     <h2 class="text-neutral-800 font-BlackHanSans text-2xl md:text-3xl">My Portfolio</h2>
                     <span class="text-base text-[#6c757d] font-NotoSans">Apr 2022 - Work in Progress</span>
                     <div class="flex flex-wrap justify-center w-full">
                         <div class="embla__carousel overflow-hidden w-full md:w-1/2">
-                            <div class="embla__container flex h-[30rem]">
+                            <div class="embla__container flex max-h-[14rem] md:max-h-[30rem]">
                                 <img src="/images/person-fill.svg">
-                                <img src="/images/arrow-left.svg">
+                                <img src="/images/person-fill.svg">
                                 <img src="/images/person-fill.svg">
                             </div>
                             <div class="flex justify-center gap-4 w-full mt-2 md:mt-4">
@@ -65,24 +65,35 @@
                                 <p>Source code</p>
                                 <a href="https://github.com/kaismic/kaismic.github.io">My Portfolio</a>
                                 <p>Skills</p>
-                                <div class="flex flex-row flex-wrap gap-3">
-                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">HTML</div>
-                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">CSS</div>
-                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">JavaScript</div>
-                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">Tailwind CSS</div>
-                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">WebPack</div>
+
+                                <div class="project__skills-container flex flex-row flex-wrap">
+                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">
+                                        <span class="project__skills-item max-w-full">HTML</span>
+                                    </div>
+                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">
+                                        <span class="project__skills-item max-w-full">CSS</span>
+                                    </div>
+                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">
+                                        <span class="project__skills-item max-w-full">JavaScript</span>
+                                    </div>
+                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">
+                                        <span class="project__skills-item max-w-full">Tailwind CSS</span>
+                                    </div>
+                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">
+                                        <span class="project__skills-item max-w-full">WebPack</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex flex-col md:gap-6 items-center p-12 bg-white rounded-3xl shadow-2xl">
+                <div class="flex flex-col gap-3 md:gap-6 items-center p-8 md:p-12 bg-white rounded-3xl shadow-2xl">
                     <h2 class="text-neutral-800 font-BlackHanSans text-2xl md:text-3xl">Custom Layout Keyboard for Android</h2>
                     <span class="text-base text-[#6c757d] font-NotoSans">Apr 2022 - Dec 2023 (Solo Project)</span>
                     <div class="flex flex-wrap justify-center w-full">
                         <div class="embla__carousel overflow-hidden w-full md:w-1/2">
-                            <div class="embla__container flex h-[30rem]">
+                            <div class="embla__container flex max-h-[14rem] md:max-h-[30rem]">
                                 <img src="/images/project1/screenshot_0.png">
                                 <img src="/images/project1/screenshot_1.png">
                                 <img src="/images/project1/screenshot_2.png">
@@ -104,13 +115,19 @@
                                 </p>
                             </div>
                             <div class="project__desc-grid">
-                                <p>Source code</p>
+                                <p>Repository</p>
                                 <a href="https://github.com/kaismic/Custom-Layout-Keyboard-for-Android">Custom Layout Keyboard for Android</a>
                                 <p>Skills</p>
-                                <div class="flex flex-row flex-wrap gap-3">
-                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">Kotlin</div>
-                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">Android</div>
-                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">Android Studio</div>
+                                <div class="project__skills-container flex flex-row flex-wrap">
+                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">
+                                        <span class="project__skills-item">Kotlin</span>
+                                    </div>
+                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">
+                                        <span class="project__skills-item">Android</span>
+                                    </div>
+                                    <div class="border h-fit py-1 px-3 border-neutral-400 rounded-3xl">
+                                        <span class="project__skills-item">Android Studio</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
