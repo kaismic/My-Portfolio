@@ -15,19 +15,19 @@ customElements.define("about-me-item",
             icon.src = this.getAttribute('icon-src')
             container.appendChild(icon)
 
-            let fieldWrapper = document.createElement('div')
+            let fieldsContainer = document.createElement('div')
 
             let label = document.createElement('div')
             label.className = 'font-Roboto text-2xl font-bold text-zinc-600 w-fit text-left'
             label.innerHTML = this.getAttribute('label')
-            fieldWrapper.appendChild(label)
+            fieldsContainer.appendChild(label)
 
             let value = document.createElement('div')
             value.className = 'font-Roboto text-lg font-normal text-zinc-600 w-fit text-left'
             value.innerHTML = this.getAttribute('value')
-            fieldWrapper.appendChild(value)
+            fieldsContainer.appendChild(value)
 
-            container.appendChild(fieldWrapper)
+            container.appendChild(fieldsContainer)
 
             this.appendChild(container)
         }
