@@ -610,12 +610,12 @@ video {
   margin-bottom: 3rem;
 }
 
-.mb-4{
-  margin-bottom: 1rem;
+.mb-16{
+  margin-bottom: 4rem;
 }
 
-.mb-8{
-  margin-bottom: 2rem;
+.mb-4{
+  margin-bottom: 1rem;
 }
 
 .mr-8{
@@ -624,10 +624,6 @@ video {
 
 .mt-2{
   margin-top: 0.5rem;
-}
-
-.mb-16{
-  margin-bottom: 4rem;
 }
 
 .flex{
@@ -977,7 +973,7 @@ a {
 }
 
 .project__desc-grid > p:nth-child(odd) {
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .project__skills-container {
@@ -999,20 +995,8 @@ a {
 }
 
 @media (min-width: 768px){
-  .md\:mb-16{
-    margin-bottom: 4rem;
-  }
-
   .md\:mt-4{
     margin-top: 1rem;
-  }
-
-  .md\:mb-32{
-    margin-bottom: 8rem;
-  }
-
-  .md\:mb-24{
-    margin-bottom: 6rem;
   }
 
   .md\:max-h-\[30rem\]{
@@ -1033,11 +1017,6 @@ a {
 
   .md\:p-12{
     padding: 3rem;
-  }
-
-  .md\:py-32{
-    padding-top: 8rem;
-    padding-bottom: 8rem;
   }
 
   .md\:py-24{
