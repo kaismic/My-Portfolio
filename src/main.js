@@ -29,11 +29,6 @@ Array.from(document.getElementsByClassName('project__card')).map(
         const carouselResizeObs = new ResizeObserver(
             function (entries, observer) {
                 const descGridNode = projectCard.querySelector('.project__desc-grid')
-                if (descGridNode.isCalculatingWidth) {
-                    console.log("returned from resize observer")
-                    return
-                }
-                descGridNode.isCalculatingWidth = true
                 const descGridNodeWidth = descGridNode.offsetWidth
                 const skillsTextWidth = descGridNode.children[2].offsetWidth
                 const columnGap = descGridNode.computedStyleMap().get('column-gap')['value']
@@ -54,7 +49,6 @@ Array.from(document.getElementsByClassName('project__card')).map(
                         const pnStyleMap = pn.computedStyleMap()
                         // if the text single line width (including padding) is less than container width, keep text-wrap nowrap and remove width property in case it was assigned before
                         const pnWidth = pn.offsetWidth
-                        console.log("pnWidth =",pnWidth)
                         if (pnWidth <= skillsContainerWidth) {
                             pn.style.removeProperty("width")
                         }
@@ -65,7 +59,6 @@ Array.from(document.getElementsByClassName('project__card')).map(
                         }
                     }
                 )
-                descGridNode.isCalculatingWidth = false
             }
         )
         carouselResizeObs.observe(carousel)
