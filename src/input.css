@@ -32,7 +32,7 @@ a {
 }
 
 .project__desc-grid > p:nth-child(odd) {
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .project__skills-container {
