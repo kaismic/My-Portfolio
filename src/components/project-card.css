@@ -1,0 +1,8 @@
+.project-card__details-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.project-card__details-container > *:nth-child(odd) {
+    font-weight: 800;
+}
