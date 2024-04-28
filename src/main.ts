@@ -1,58 +1,64 @@
 import { ProjectCard, ProjectCardInfo } from './components/ProjectCard'
 
-const projectCardInfos: ProjectCardInfo[] = [
+const experiences: ProjectCardInfo[] = [
+    {
+        title: "The Carbon-Conscious Traveller - Internship",
+        subtitle: "Dec 2023 - Jan 2024",
+        slides: [
+            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_1.png" },
+            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_2.png" },
+            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_3.png" },
+            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_4.png" },
+            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_5.png" },
+            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_6.png" },
+            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_7.png" },
+            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_8.png" }
+        ],
+        paragraphs: [
+            "<b>Summer Internship Project offered by Macquarie University.</b> This project involved developing an <b>Android application that calculates and displays carbon emissions with different transport modes.</b> It was developed using <span class='text-pink-500'>Kotlin</span> and <span class='text-pink-500'>Android Studio</span>, utilising various APIs provided by <span class='text-pink-500'>Google Maps Platform</span>.",
+            "My responsibilities in this project were: presenting progress in the weekly meeting, background research for other similar projects/apps and developing, testing and streamlining the app.",
+            "mention learning about Fragments and Kotlin coroutine and using them, how the app could be improved by migrating to JetPack and using Navigation Component, limits of the app, etc..."
+        ],
+        githubLink: "https://github.com/kaismic/The-Carbon-Conscious-Traveller/",
+        skills: ["Kotlin", "Android", "Android Studio", "Google Maps API"]
+    },
+]
+
+
+const experienceContainer = document.getElementById("experience-container")
+experiences.map(
+    (experienceInfo) => {
+        const pc = new ProjectCard(experienceInfo)
+        pc.initPromise.then(() => {
+            experienceContainer.appendChild(pc.root)
+        })
+    }
+)
+
+const projects: ProjectCardInfo[] = [
     {
         title: "Portfolio Website",
         subtitle: "Apr 2024 - Work in Progress (Solo Project)",
         slides: [
-            {
-                tag: "img",
-                src: "./images/person-fill.svg"
-            },
-            {
-                tag: "img",
-                src: "./images/person-fill.svg"
-            },
-            {
-                tag: "img",
-                src: "./images/person-fill.svg"
-            }
+            { tag: "img", src: "./images/my-portfolio/Screenshot_1.jpeg" },
+            { tag: "img", src: "./images/my-portfolio/Screenshot_2.jpeg" },
+            { tag: "img", src: "./images/my-portfolio/Screenshot_3.jpeg" }
         ],
         paragraphs: [
             "<b>Portfolio website</b> (which you are currently looking at) for presenting my software development projects and works.",
             "<span class='text-pink-500'>Responsive Web Design</span> is applied throughout the whole website via <span class='text-pink-500'>Tailwind CSS</span>, making the website respond to different screen sizes to change its layout accordingly. Furthermore, this was the first time I have utilised a module bundler like <span class='text-pink-500'>Webpack</span>, and it was quite interesting how it analyses module dependencies in different JavaScript files and bundles them into a single JavaScript file."
         ],
         githubLink: "https://github.com/kaismic/My-Portfolio/",
-        skills: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "TypeScript",
-            "Tailwind CSS",
-            "WebPack",
-            "npm"
-        ]
+        skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS", "WebPack", "npm"]
     },
     {
         title: "Hitomi Scroll Viewer",
         subtitle: "Jul 2022 - Mar 2024 (Solo Project)",
         slides: [
-            {
-                tag: "img",
-                src: "./images/hitomi-scroll-viewer/preview_0.png"
-            },
-            {
-                tag: "img",
-                src: "./images/hitomi-scroll-viewer/preview_1.png"
-            },
-            {
-                tag: "img",
-                src: "./images/hitomi-scroll-viewer/preview_2.png"
-            },
-            {
-                tag: "img",
-                src: "./images/hitomi-scroll-viewer/preview_3.png"
-            }
+            { tag: "img", src: "./images/hitomi-scroll-viewer/preview_0.png" },
+            { tag: "img", src: "./images/hitomi-scroll-viewer/preview_1.png" },
+            { tag: "img", src: "./images/hitomi-scroll-viewer/preview_2.png" },
+            { tag: "img", src: "./images/hitomi-scroll-viewer/preview_3.png" }
         ],
         paragraphs: [
             "<b>A Windows application manga viewer with additional features such as auto scrolling, searching by tags and downloading.</b> This application was developed because the original website lacked functionalities that I needed and it was inconvenient to use the already existing features in the website. Developed using <span class='text-pink-500'>C#</span>, <span class='text-pink-500'>.NET</span> and <span class='text-pink-500'>WinUI 3</span> Platform",
@@ -91,8 +97,8 @@ const projectCardInfos: ProjectCardInfo[] = [
     }
 ]
 
-const projectCardContainer = document.getElementById("project-card-container")
-projectCardInfos.map(
+const projectCardContainer = document.getElementById("projects-container")
+projects.map(
     (projectCardInfo) => {
         const pc = new ProjectCard(projectCardInfo)
         pc.initPromise.then(() => {
