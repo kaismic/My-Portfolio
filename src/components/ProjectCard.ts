@@ -80,7 +80,7 @@ export class ProjectCard extends Component {
                 emblaCarouselApi.on('select', this.setCarouselPageNum)
                 emblaCarouselApi.on('select', this.setVideoPlayState)
                 this.setCarouselPageNum(emblaCarouselApi) // init page number display
-            }, 10);
+            }, 200);
  
             // prevent skill items expanding to max width when word is wrapped due to insufficient grid column width
             // need to observe projectDetailsContainer width change indirectly through carouselRoot because projectDetailsContainer changes its height when skill item heights are changed but carouselRoot does not, so it doesn't cause infinite resize observer call
