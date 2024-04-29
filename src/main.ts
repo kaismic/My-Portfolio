@@ -38,7 +38,7 @@ experiences.map(
 const projects: ProjectCardInfo[] = [
     {
         title: "Portfolio Website",
-        subtitle: "Apr 2024 - Work in Progress (Solo Project)",
+        subtitle: "Apr 2024 (Solo Project)",
         slides: [
             { tag: "img", src: "./images/my-portfolio/Screenshot_1.jpeg" },
             { tag: "img", src: "./images/my-portfolio/Screenshot_2.jpeg" },
