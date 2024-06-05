@@ -733,6 +733,10 @@ video {
   justify-content: center;
 }
 
+.justify-between{
+  justify-content: space-between;
+}
+
 .gap-12{
   gap: 3rem;
 }
@@ -756,6 +760,11 @@ video {
 
 .gap-y-6{
   row-gap: 1.5rem;
+}
+
+.gap-x-1{
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
 }
 
 .self-start{
