@@ -55,14 +55,12 @@ const projects: ProjectCardInfo[] = [
         title: "Hitomi Scroll Viewer",
         subtitle: "Jul 2022 - Mar 2024 (Solo Project)",
         slides: [
-            { tag: "img", src: "./images/hitomi-scroll-viewer/preview_0.png" },
-            { tag: "img", src: "./images/hitomi-scroll-viewer/preview_1.png" },
-            { tag: "img", src: "./images/hitomi-scroll-viewer/preview_2.png" },
-            { tag: "img", src: "./images/hitomi-scroll-viewer/preview_3.png" }
+            { tag: "img", src: "./images/hitomi-scroll-viewer/preview1.png" },
+            { tag: "img", src: "./images/hitomi-scroll-viewer/preview2.png" }
         ],
         paragraphs: [
-            "<b>A manga viewer Windows application with additional features such as auto scrolling, searching by tags and downloading.</b> This application was developed because the original website lacked functionalities I required and it was inconvenient to use the already existing features in the website. Developed using <span class='text-pink-500'>C#</span>, <span class='text-pink-500'>.NET</span> and <span class='text-pink-500'>WinUI 3</span> Platform",
-            "One of the things that I have learnt about in <i>Systems Programming</i> unit was <span class='text-emerald-600'>Mutex</span>. This concept came in very handy because it enabled the app to handle page switching without causing any <span class='text-emerald-600'>race conditions</span>. Moreover, two concepts which I have learnt from <i>Object-Oriented Programming Practices</i> were <span class='text-emerald-600'>Concurrency</span> and <span class='text-emerald-600'>Design Pattern</span>, which were incredibly helpful when developing this app. The former was used when implementing the image downloading function with a bit of TCP/IP knowledge I have gained from <i>Data Communications</i>. The latter was utilised for modularising different components of the app, which helped to keep the project code managable and easy to refactor."
+            "<b>A gallery viewer application with various features such as creating search links with combinable tag filters, auto scrolling and downloading.</b> This application was developed because the original website lacked functionalities that I required and it was inconvenient to use the already existing features in the website. Developed using <span class='text-pink-500'>C#</span>, <span class='text-pink-500'>.NET</span> and <span class='text-pink-500'>WinUI 3</span> Platform",
+            "One of the things that I have learnt about in <i>Systems Programming</i> unit was <span class='text-emerald-600'>Mutex</span>. This concept came in very handy because it enabled the app to handle the user inputs without causing any <span class='text-emerald-600'>race conditions</span>. Moreover, two concepts which I have learnt from <i>Object-Oriented Programming Practices</i> were <span class='text-emerald-600'>Concurrency</span> and <span class='text-emerald-600'>Design Pattern</span>, which were incredibly helpful when developing this app. The former was used when implementing the image downloading function with a bit of TCP/IP knowledge I have gained from <i>Data Communications</i>. The latter was utilised for modularising different components of the app, which helped to keep the project code managable and refactorable."
         ],
         githubLink: "https://github.com/kaismic/Hitomi-Scroll-Viewer",
         skills: ["C#", ".NET", "WinUI 3", "Windows"]
