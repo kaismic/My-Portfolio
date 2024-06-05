@@ -53,7 +53,7 @@ const projects: ProjectCardInfo[] = [
     },
     {
         title: "Hitomi Scroll Viewer",
-        subtitle: "Jul 2022 - Jun 2024 (Solo Project)",
+        subtitle: "Jul 2022 - Present (Solo Project)",
         slides: [
             { tag: "img", src: "./images/hitomi-scroll-viewer/preview1.png" },
             { tag: "img", src: "./images/hitomi-scroll-viewer/preview2.png" }
