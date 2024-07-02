@@ -8,6 +8,11 @@ export interface ProjectCardInfo {
         tag: string
         src: string
     }[]
+    badges: {
+        href: string
+        badgeUrl: string
+        altText: string
+    }[]
     paragraphs: string[]
     githubLink: string
     skills: string[]
@@ -45,12 +50,39 @@ export class ProjectCard extends Component {
                 }
             )
 
-            const mainDesc = this.root.querySelector(".project-card__main-desc")
-            mainDesc.innerHTML = projectCardInfo.paragraphs.map(
-                (paragraph) => {
-                    return "<p>" + paragraph + "</p>"
+            const badgeContainer = this.root.querySelector(".project-card__badges-container")
+            if (projectCardInfo.badges.length > 0) {
+                badgeContainer.classList.add("mb-4")
+            }
+            projectCardInfo.badges.map(
+                (badgeObj) => {
+                    const link = document.createElement("a")
+                    link.href = badgeObj.href
+                    const img = document.createElement("img")
+                    img.src = badgeObj.badgeUrl
+                    img.alt = badgeObj.altText
+                    link.appendChild(img)
+                    badgeContainer.appendChild(link)
+                    return
                 }
-            ).join("<br>")
+            )
+            const mainDesc = this.root.querySelector(".project-card__main-desc")
+            const paragraphs = projectCardInfo.paragraphs.map(
+                (paragraphHTML) => {
+                    const paragraph = document.createElement("p")
+                    paragraph.innerHTML = paragraphHTML
+                    return paragraph
+                }
+            )
+            paragraphs
+                .flatMap(elem => [elem, document.createElement("br")])
+                .slice(0, -1)
+                .map(
+                    (elem) => {
+                        mainDesc.appendChild(elem)
+                        return
+                    }
+                )
             const githubLink: HTMLAnchorElement = this.root.querySelector(".project-card__details__github-link")
             githubLink.href = projectCardInfo.githubLink
 
