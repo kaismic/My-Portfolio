@@ -4,16 +4,8 @@ const experiences: ProjectCardInfo[] = [
     {
         title: "The Carbon-Conscious Traveller - Internship",
         subtitle: "Dec 2023 - Jan 2024",
-        slides: [
-            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_1.png" },
-            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_2.png" },
-            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_3.png" },
-            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_4.png" },
-            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_5.png" },
-            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_6.png" },
-            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_7.png" },
-            { tag: "img", src: "./images/the-carbon-conscious-traveller/Screenshot_8.png" }
-        ],
+        repo: "The-Carbon-Conscious-Traveller",
+        defaultBranch: "master",
         badges: [],
         paragraphs: [
             "<b>Summer Internship Project offered by Macquarie University.</b> This project involved developing an <b>Android application that calculates and displays carbon emissions with different transport modes.</b> It was developed using <span class='text-pink-500'>Kotlin</span> and <span class='text-pink-500'>Android Studio</span>, utilising various <span class='text-emerald-600'>APIs</span> provided by <span class='text-pink-500'>Google Maps Platform</span>.",
@@ -27,24 +19,21 @@ const experiences: ProjectCardInfo[] = [
 
 
 const experienceContainer = document.getElementById("experience-container")
-experiences.map(
-    (experienceInfo) => {
-        const pc = new ProjectCard(experienceInfo)
-        pc.initPromise.then(() => {
-            experienceContainer.appendChild(pc.root)
-        })
-    }
-)
+let projectCard: ProjectCard
+for (const experience of experiences) {
+    projectCard = new ProjectCard(experience)
+    projectCard.initPromise.then(() => {
+        experienceContainer.appendChild(projectCard.root)
+    })
+    await projectCard.projectCardPromise
+}
 
 const projects: ProjectCardInfo[] = [
     {
         title: "Portfolio Website",
         subtitle: "Apr 2024 - Present (Solo Project)",
-        slides: [
-            { tag: "img", src: "./images/my-portfolio/Screenshot_1.jpeg" },
-            { tag: "img", src: "./images/my-portfolio/Screenshot_2.jpeg" },
-            { tag: "img", src: "./images/my-portfolio/Screenshot_3.jpeg" }
-        ],
+        repo: "My-Portfolio",
+        defaultBranch: "main",
         badges: [],
         paragraphs: [
             "<b>Portfolio website</b> (which you are currently looking at) for presenting my software development projects and works.",
@@ -56,10 +45,8 @@ const projects: ProjectCardInfo[] = [
     {
         title: "Hitomi Scroll Viewer",
         subtitle: "Jul 2022 - Present (Solo Project)",
-        slides: [
-            { tag: "img", src: "./images/hitomi-scroll-viewer/preview1.png" },
-            { tag: "img", src: "./images/hitomi-scroll-viewer/preview2.png" }
-        ],
+        repo: "Hitomi-Scroll-Viewer",
+        defaultBranch: "master",
         badges: [
             {
                 href: "https://github.com/kaismic/Hitomi-Scroll-Viewer/releases/latest",
@@ -88,24 +75,8 @@ const projects: ProjectCardInfo[] = [
     {
         title: "Custom Layout Keyboard for Android",
         subtitle: "Apr 2022 - Dec 2023 (Solo Project)",
-        slides: [
-            {
-                tag: "video",
-                src: "./images/custom-layout-keyboard/screen_record_0.mp4"
-            },
-            {
-                tag: "img",
-                src: "./images/custom-layout-keyboard/screenshot_0.png"
-            },
-            {
-                tag: "img",
-                src: "./images/custom-layout-keyboard/screenshot_1.png"
-            },
-            {
-                tag: "img",
-                src: "./images/custom-layout-keyboard/screenshot_2.png"
-            }
-        ],
+        repo: "Custom-Layout-Keyboard-for-Android",
+        defaultBranch: "master",
         badges: [],
         paragraphs: [
             "<b>An Android application which allows customising keyboard layouts</b> developed using <span class='text-pink-500'>Kotlin</span> and <span class='text-pink-500'>Android Studio</span>. This application was developed because I could not find a decent keyboard application which also supports keyboard layout customisation.",
@@ -117,11 +88,10 @@ const projects: ProjectCardInfo[] = [
 ]
 
 const projectCardContainer = document.getElementById("projects-container")
-projects.map(
-    (projectCardInfo) => {
-        const pc = new ProjectCard(projectCardInfo)
-        pc.initPromise.then(() => {
-            projectCardContainer.appendChild(pc.root)
-        })
-    }
-)
+for (const project of projects) {
+    const projectCard = new ProjectCard(project)
+    projectCard.initPromise.then(() => {
+        projectCardContainer.appendChild(projectCard.root)
+    })
+    await projectCard.projectCardPromise
+}
