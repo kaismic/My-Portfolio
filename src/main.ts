@@ -19,13 +19,11 @@ const experiences: ProjectCardInfo[] = [
 
 
 const experienceContainer = document.getElementById("experience-container")
-let projectCard: ProjectCard
 for (const experience of experiences) {
-    projectCard = new ProjectCard(experience)
-    projectCard.initPromise.then(() => {
+    const projectCard = new ProjectCard(experience)
+    await projectCard.initPromise.then(() => {
         experienceContainer.appendChild(projectCard.root)
     })
-    await projectCard.projectCardPromise
 }
 
 const projects: ProjectCardInfo[] = [
@@ -37,7 +35,7 @@ const projects: ProjectCardInfo[] = [
         badges: [],
         paragraphs: [
             "<b>Portfolio website</b> (which you are currently looking at) for presenting my software development projects and works.",
-            "<span class='text-emerald-600'>Responsive Web Design</span> is applied throughout the whole website via <span class='text-pink-500'>Tailwind CSS</span>, making the website respond to different screen sizes to change its layout accordingly. Furthermore, this was the first time I have utilised a module bundler like <span class='text-pink-500'>Webpack</span>, and it was quite interesting how it analyses module dependencies in different JavaScript files and bundles them into a single JavaScript file."
+            "<span class='text-emerald-600'>Responsive Web Design</span> is applied throughout the whole website via <span class='text-pink-500'>Tailwind CSS</span>, making the website respond to different screen sizes to change its layout accordingly. Furthermore, this was the first time I have utilised a module bundler like <span class='text-pink-500'>Webpack</span>, and it was quite interesting to see how it bundles different JavaScript files into a single file by analysing module dependencies."
         ],
         githubLink: "https://github.com/kaismic/My-Portfolio/",
         skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS", "WebPack", "npm"]
@@ -67,7 +65,8 @@ const projects: ProjectCardInfo[] = [
         ],
         paragraphs: [
             "<b>A gallery viewer application with various features such as creating search links with combinable tag filters, auto scrolling and downloading.</b> This application was developed because the original website lacked functionalities that I required and it was inconvenient to use the already existing features in the website. Developed using <span class='text-pink-500'>C#</span>, <span class='text-pink-500'>.NET</span> and <span class='text-pink-500'>WinUI 3</span> Platform",
-            "One of the things that I have learnt about in <i>Systems Programming</i> unit was <span class='text-emerald-600'>Mutex</span>. This concept came in very handy because it enabled the app to handle the user inputs without causing any <span class='text-emerald-600'>race conditions</span>. Moreover, two concepts which I have learnt from <i>Object-Oriented Programming Practices</i> were <span class='text-emerald-600'>Concurrency</span> and <span class='text-emerald-600'>Design Pattern</span>, which were incredibly helpful when developing this app. The former was used when implementing the image downloading function with a bit of TCP/IP knowledge I have gained from <i>Data Communications</i>. The latter was utilised for modularising different components of the app, which helped to keep the project code managable and refactorable."
+            "One of the things that I have learnt about in <i>Systems Programming</i> unit was <span class='text-emerald-600'>Mutex</span>. This concept came in very handy because it enabled the app to handle the user inputs without causing any <span class='text-emerald-600'>race conditions</span>. Moreover, two concepts which I have learnt from <i>Object-Oriented Programming Practices</i> were <span class='text-emerald-600'>Concurrency</span> and <span class='text-emerald-600'>Design Pattern</span>, which were incredibly helpful when developing this app. The former was used when implementing the image downloading function with a bit of TCP/IP knowledge I have gained from <i>Data Communications</i>. The latter was utilised for modularising different components of the app, which helped to keep the project code managable and refactorable.",
+            "This app also allows users to sync their data on Google Drive using Google APIs with the OAuth 2.0 protocol for authentication and authorization."
         ],
         githubLink: "https://github.com/kaismic/Hitomi-Scroll-Viewer",
         skills: ["C#", ".NET", "WinUI 3", "Windows", "OAuth 2.0"]
@@ -90,8 +89,7 @@ const projects: ProjectCardInfo[] = [
 const projectCardContainer = document.getElementById("projects-container")
 for (const project of projects) {
     const projectCard = new ProjectCard(project)
-    projectCard.initPromise.then(() => {
+    await projectCard.initPromise.then(() => {
         projectCardContainer.appendChild(projectCard.root)
     })
-    await projectCard.projectCardPromise
 }

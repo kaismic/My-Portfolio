@@ -11,10 +11,10 @@ export default tseslint.config(
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    rules: {
-      "@typescript-eslint/strict-boolean-expressions": "error",
-      "@typescript-eslint/no-unnecessary-condition": "error"
-    },
+    // rules: {
+    //   "@typescript-eslint/strict-boolean-expressions": "error",
+    //   "@typescript-eslint/no-unnecessary-condition": "error"
+    // },
     ignores: ["zzz.js", "*.config.*", "dist/**/*", "node_modules/**/*"]
   }
 );

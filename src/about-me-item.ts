@@ -5,7 +5,7 @@ customElements.define("about-me-item",
         }
 
         connectedCallback() {
-            this.className = 'w-full sm:w-1/2 lg:w-1/3'
+            this.className = 'w-full sm:w-1/2 xl:w-1/4'
 
             const container = document.createElement('div')
             container.className = 'flex max-w-64 w-full mx-auto items-center'
@@ -23,7 +23,7 @@ customElements.define("about-me-item",
             fieldsContainer.appendChild(label)
 
             const value = document.createElement('div')
-            value.className = 'font-Roboto text-lg font-normal text-zinc-600 w-fit text-left'
+            value.className = 'font-Roboto text-lg font-normal text-zinc-600 w-fit text-left break-words'
             value.innerHTML = this.getAttribute('value')
             fieldsContainer.appendChild(value)
 

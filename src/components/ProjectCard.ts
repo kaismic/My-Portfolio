@@ -20,10 +20,9 @@ export interface ProjectCardInfo {
 }
 
 export class ProjectCard extends Component {
-    public projectCardPromise: Promise<void>
     constructor(projectCardInfo: ProjectCardInfo) {
         super("project-card.html")
-        this.projectCardPromise = this.initPromise.then(async () => {
+        this.initPromise = this.initPromise.then(async () => {
             // init project card
             this.root.querySelector(".project-card__title").innerHTML = projectCardInfo.title
             this.root.querySelector(".project-card__subtitle").innerHTML = projectCardInfo.subtitle
