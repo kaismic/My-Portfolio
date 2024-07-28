@@ -53,7 +53,7 @@ const projects: ProjectCardInfo[] = [
             },
             {
                 href: "https://github.com/kaismic/Hitomi-Scroll-Viewer/releases/latest",
-                badgeUrl: "https://img.shields.io/github/downloads/kaismic/Hitomi-Scroll-Viewer/latest/total.svg?logo=github",
+                badgeUrl: "https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fkaismic%2FHitomi-Scroll-Viewer%2Freleases%2Flatest&query=%24.assets%5B%3F(%2Fmsixbundle%2F.test(%40.name))%5D.download_count&label=downloads%40latest&color=9BC913",
                 altText: "GitHub downloads count latest release"
 
             },
