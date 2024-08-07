@@ -1,36 +1,40 @@
-customElements.define("about-me-item",
-    class extends HTMLDivElement {
-        constructor() {
-            super()
-        }
+import { LitElement, html } from 'lit-element';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { customElement } from 'lit/decorators.js'
 
-        connectedCallback() {
-            this.className = 'w-full sm:w-1/2 xl:w-1/4'
+export interface AboutMe {
+    iconSrc: string
+    label: string
+    values: string[]
+}
 
-            const container = document.createElement('div')
-            container.className = 'flex max-w-64 w-full mx-auto items-center'
+@customElement('about-me-element')
+export class AboutMeElement extends LitElement {
+    aboutMe: AboutMe
 
-            const icon = document.createElement('img')
-            icon.className = 'w-8 h-8 mr-8 fill-zinc-600'
-            icon.src = this.getAttribute('icon-src')
-            container.appendChild(icon)
+    constructor(aboutMe: AboutMe) {
+        super()
+        this.className = "w-full sm:w-1/2 xl:w-1/4"
+        this.aboutMe = aboutMe
+    }
 
-            const fieldsContainer = document.createElement('div')
+    protected render() {
+        return html`
+            <div class="flex max-w-64 w-full mx-auto items-center">
+                <img class="w-8 h-8 mr-8 fill-zinc-600" src="${this.aboutMe.iconSrc}">
+                <div>
+                    <div class="font-Roboto text-2xl font-bold text-zinc-600 w-fit text-left">${this.aboutMe.label}</div>
+                    <div class="grid grid-cols-1 font-Roboto text-lg font-normal text-zinc-600 w-fit text-left break-words">
+                    ${
+                        this.aboutMe.values.map(value => html`<span>${value}</span>`)
+                    }
+                    </div>
+                </div>
+            </div>
+        `
+    }
 
-            const label = document.createElement('div')
-            label.className = 'font-Roboto text-2xl font-bold text-zinc-600 w-fit text-left'
-            label.innerHTML = this.getAttribute('label')
-            fieldsContainer.appendChild(label)
-
-            const value = document.createElement('div')
-            value.className = 'font-Roboto text-lg font-normal text-zinc-600 w-fit text-left break-words'
-            value.innerHTML = this.getAttribute('value')
-            fieldsContainer.appendChild(value)
-
-            container.appendChild(fieldsContainer)
-
-            this.appendChild(container)
-        }
-    },
-    {extends: 'div'}
-)
+    protected createRenderRoot(): HTMLElement | DocumentFragment {
+        return this
+    }
+}

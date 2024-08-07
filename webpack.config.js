@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    entry: ['./about-me-item.ts', './main.ts'],
+    entry: './main.ts',
     module: {
         rules: [
             {
