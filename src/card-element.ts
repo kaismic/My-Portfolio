@@ -48,7 +48,7 @@ export class CardElement extends LitElement {
                 ${
                     card.badges.map(badge => 
                         html`
-                        <a href="${badge.href}">
+                        <a href="${badge.href}" target="_blank">
                             <img src="${badge.badgeUrl}" alt="${badge.altText}"/>
                         </a>
                         `
@@ -66,7 +66,7 @@ export class CardElement extends LitElement {
 
         this.linksTemplate = html`
             <div class="grid grid-cols-1 gap-2">
-                ${card.links.map(link => html`<a class="text-[#258ddb] w-fit" href="${link.url}">${link.description}</a>`)}
+                ${card.links.map(link => html`<a class="text-[#258ddb] w-fit" href="${link.url}" target="_blank">${link.description}</a>`)}
             </div>
         `
 
